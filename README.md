@@ -1,10 +1,10 @@
-# React + Redux
+# Videoplayer: React + Redux + TailwindCSS
 
 ### Português
-- Exemplo simples de como configurar e utilizar o Redux com React e TypeScript.
+- Exemplo simples de uma aplicação de videoplayer criada com TailwindCSS, React + Redux
 
 ### English
-- Simple example that how to configure and use Redux with React and typeScript.
+- Simple example that an app of the videoplayer created with tailwindCSS, React and Redux
 
 ## Install
 
