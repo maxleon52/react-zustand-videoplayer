@@ -18,6 +18,15 @@ export default function Module({
 }: ModuleProps) {
   const dispatch = useDispatch();
 
+  const { currentModuleIndex, currentLessonIndex } = useAppSelector((state) => {
+    const { currentModuleIndex, currentLessonIndex } = state.player;
+
+    return {
+      currentModuleIndex,
+      currentLessonIndex,
+    };
+  });
+
   const lessons = useAppSelector((state) => {
     return state.player.courses.modules[moduleIndex].lessons;
   });
@@ -39,14 +48,20 @@ export default function Module({
 
       <Collapsible.Content>
         <nav className="relative flex flex-col gap-4 p-6">
-          {lessons.map((lesson, lessonIndex) => (
-            <Lesson
-              key={lesson.id}
-              title={lesson.title}
-              duration={lesson.duration}
-              onPlay={() => dispatch(play([moduleIndex, lessonIndex]))}
-            />
-          ))}
+          {lessons.map((lesson, lessonIndex) => {
+            const isCurrent =
+              currentModuleIndex === moduleIndex &&
+              currentLessonIndex === lessonIndex;
+            return (
+              <Lesson
+                key={lesson.id}
+                title={lesson.title}
+                duration={lesson.duration}
+                onPlay={() => dispatch(play([moduleIndex, lessonIndex]))}
+                isCurrent={isCurrent}
+              />
+            );
+          })}
         </nav>
       </Collapsible.Content>
     </Collapsible.Root>
