@@ -19,12 +19,14 @@ export interface PlayerState {
   course: Course | null;
   currentModuleIndex: number;
   currentLessonIndex: number;
+  isLoading: boolean;
 }
 
 const initialState: PlayerState = {
   course: null,
   currentModuleIndex: 0,
   currentLessonIndex: 0,
+  isLoading: true,
 };
 
 export const loadCourse = createAsyncThunk("player/load", async () => {
@@ -62,9 +64,13 @@ export const playerSlice = createSlice({
   },
   // extraReducers: Escuta Ações(ACTIONS) de outro locais, que podem ser, outros SLICES ou ASYNCTHUNK´s
   extraReducers(builder) {
+    builder.addCase(loadCourse.pending, (state) => {
+      state.isLoading = true;
+    });
     builder.addCase(loadCourse.fulfilled, (state, action) => {
-      state.course = action.payload
-    })
+      state.course = action.payload;
+      state.isLoading = false;
+    });
   },
 });
 
