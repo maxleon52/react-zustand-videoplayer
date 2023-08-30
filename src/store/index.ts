@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
+import { player } from "./slices/player";
 
 // STORE: É o estado global da APP
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    player,
+  },
 });
 
 // getState: Retorna TODO o ESTADO
