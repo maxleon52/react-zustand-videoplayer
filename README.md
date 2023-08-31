@@ -1,10 +1,10 @@
-# Videoplayer: React + Redux + TailwindCSS
+# Videoplayer: React + Zustand + TailwindCSS
 
 ### Português
-- Exemplo simples de uma aplicação de videoplayer criada com TailwindCSS, React + Redux
+- Exemplo simples de uma aplicação de videoplayer criada com TailwindCSS, React + Zustand
 
 ### English
-- Simple example that an app of the videoplayer created with tailwindCSS, React and Redux
+- Simple example that an app of the videoplayer created with tailwindCSS, React and Zustand
 
 ## Install
 
