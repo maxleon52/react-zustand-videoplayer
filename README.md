@@ -12,7 +12,10 @@
 
 2 - ``npm install``
 
-3 - ``npm run dev``
+3 - Fake API: ``npm run server``
+
+4 - ``npm run dev``
+
 
 
 
